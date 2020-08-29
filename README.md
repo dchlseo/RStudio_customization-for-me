@@ -9,4 +9,5 @@ The code is organized to process a preliminary data analysis.
   correlation
   univariate linear regression
   multivariate ANOVA
-  
+
+Just to make life easier in the future.... :)
