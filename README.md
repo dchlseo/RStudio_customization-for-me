@@ -11,3 +11,7 @@ The code is organized to process a preliminary data analysis.
   multivariate ANOVA
 
 Just to make life easier in the future.... :)
+
+REFERENCES:
+  1. Fundamentals of Social Science Statistics (Kim, Soo Young); 사회과학통계의 기본 (김수영 저)
+  
