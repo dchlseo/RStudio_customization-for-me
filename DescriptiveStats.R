@@ -1,0 +1,56 @@
+#### <1. basic setup for data processing> ####
+# TIP. Only use this file as template. Create new file for each project. 
+
+# sample data from MASS package
+install.packages("MASS") # skip if already installed
+library(MASS)
+
+setwd("~/Desktop/R Studio/RStudio_mycode")
+options(scipen = 999) # scientific notation to decimal points
+
+##importing external files
+
+# 1. If data file extension is '.txt' 
+# 'delim': reads data with boundaries made with TAB
+# **naming is arbitrary. Fill in file name accordingly.
+data <- read.delim("~/Desktop/R Studio/RStudio_mycode/data.txt") 
+
+# 2. if data file extension is '.xlsx'
+# you need library(readxl). 
+library(readxl)
+data <- read_excel("data.xlsx")
+
+# 3. if data file extension is '.csv'
+data <- read.csv("data.csv", header = TRUE) # if file contains header
+
+View(data)
+
+# summary
+View(Cars93)
+df <- Cars93
+
+library(psych) # includes "describe" function 
+str(df) # use to check variable type (Factor, num, int, etc.)
+summary(subset(df, select = c(MPG.city, Price, DriveTrain))) # subset: shows selected variables
+describe(df[c("MPG.city", "Price", "DriveTrain")]) # includes SD, median, skew/kurtosis, N-size
+
+#### <2. Tables and Graphs> ####
+
+## Frequency Distribution
+# shows the distribution of INDIVIDUAL SCORES within a measurement score.
+
+# 1. frequency distribution of QUALITATIVE data
+qual.data <- df$DriveTrain
+table(qual.data) # you can see here that there are 3 categories: FRONT, REAR, 4WD
+barplot(table(qual.data), ylim=c(0,80), xlab="x_name",
+        ylab="y_name", axis.lty="solid", space=1,
+        main="PLOT_NAME")
+
+# 2. frequency distribution of QUANTITATIVE data
+
+
+
+
+# unloading package from memory
+detach("package:MASS", unload=TRUE) 
+detach("package:psych", unload=TRUE)
