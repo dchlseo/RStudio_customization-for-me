@@ -39,10 +39,15 @@ str(df) # use to check variable type (Factor, num, int, etc.)
 summary(subset(df, select = c(MPG.city, Price, DriveTrain))) # subset: shows selected variables
 describe(df[c("MPG.city", "Price", "DriveTrain")]) # includes SD, median, mean, skew/kurtosis, N-size
 
+# change variable types
+
+
 # (mode requires additional package) : while suitable for nominal scale, not so much for continuous variables.
 library(modeest)
 mfv(df$DriveTrain)
 mfv(df$Price)
+
+# ******** deal with missing values!!
 
 #### <2.Tables and Graphs> ####
 
